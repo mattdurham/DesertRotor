@@ -1,4 +1,5 @@
-﻿using DesertRotor.Models;
+﻿using DesertRotor.DB;
+using DesertRotor.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ namespace DesertRotor.Controllers
 {
     public class HomeController : Controller
     {
-         static ContactRepository_contactRepository = new ContactRepository();
-;        public ActionResult Index()
+        DesertContext dc = new DesertContext();
+        ContactRepository _contactRepository = new ContactRepository();
+       public ActionResult Index()
         {
             return View();
         }
